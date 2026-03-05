@@ -2,6 +2,7 @@
 import { toast } from "react-toastify";
 import Button from "../utils/Button";
 import ContainerWraper from "../utils/containerWraper";
+
 export default function page() {
   return (
     <ContainerWraper>
