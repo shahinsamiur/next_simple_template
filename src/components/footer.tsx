@@ -2,15 +2,15 @@
 
 import React from "react";
 import { footerSections, socialLinks } from "@/src/_mock/footer";
+
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black text-gray-300 pt-16 pb-8 px-6">
+    <footer className="bg-background text-foreground pt-16 pb-8 px-6">
       <div className="container mx-auto">
-        <div className="flex flex-wrap border-b border-gray-800 pb-12">
-          {/* Brand */}
+        <div className="flex flex-wrap border-b border-foreground/20 pb-12">
           <div className="w-full sm:w-1/2 md:w-1/5 mb-10 md:mb-0">
-            <h2 className="text-2xl font-bold text-white mb-4">ShahinDev</h2>
-            <p className="text-sm leading-relaxed pr-4">
+            <h2 className="text-2xl font-bold mb-4">ShahinDev</h2>
+            <p className="text-sm leading-relaxed pr-4 opacity-80">
               Building modern web applications with performance, scalability,
               and beautiful UI/UX experiences.
             </p>
@@ -21,12 +21,12 @@ const Footer: React.FC = () => {
               key={index}
               className="w-1/2 md:w-1/5 mb-10 md:mb-0 flex justify-center items-center flex-col"
             >
-              <h2 className="text-white font-semibold mb-4">{section.title}</h2>
+              <h2 className="font-semibold mb-4">{section.title}</h2>
 
               <ul className="space-y-3 text-sm">
                 {section.links.map((link, i) => (
                   <li key={i}>
-                    <a href="#" className="hover:text-white transition">
+                    <a href="#" className="hover:opacity-70 transition">
                       {link}
                     </a>
                   </li>
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
           ))}
 
           <div className="w-1/2 md:w-1/5 flex justify-center items-center flex-col">
-            <h2 className="text-white font-semibold mb-4">Connect</h2>
+            <h2 className="font-semibold mb-4">Connect</h2>
 
             <div className="flex gap-4 text-xl">
               {socialLinks.map((social, index) => {
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
                   <a
                     key={index}
                     href={social.href}
-                    className="hover:text-white transition"
+                    className="hover:opacity-70 transition"
                   >
                     <Icon />
                   </a>
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-8 text-center text-sm text-gray-500">
+        <div className="mt-8 text-center text-sm opacity-60">
           © {new Date().getFullYear()} ShahinDev. All rights reserved.
         </div>
       </div>
