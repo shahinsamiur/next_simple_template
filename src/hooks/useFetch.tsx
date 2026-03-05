@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
-
-interface FetchState<T> {
-  data: T | null;
-  loading: boolean;
-  error: string | null;
-}
+import axios, { AxiosError } from "axios";
+import { FetchState } from "@/src/types";
 
 export function useFetch<T>(url: string) {
   const [state, setState] = useState<FetchState<T>>({
@@ -16,12 +12,9 @@ export function useFetch<T>(url: string) {
   useEffect(() => {
     let isMounted = true;
 
-    async function fetchData() {
+    const fetchData = async () => {
       try {
-        const res = await fetch(url);
-        if (!res.ok) throw new Error("Something went wrong");
-
-        const data: T = await res.json();
+        const { data } = await axios.get<T>(url);
 
         if (isMounted) {
           setState({ data, loading: false, error: null });
@@ -30,18 +23,16 @@ export function useFetch<T>(url: string) {
         if (isMounted) {
           let errorMessage = "Unknown error";
 
-          if (err instanceof Error) {
+          if (err instanceof AxiosError) {
+            errorMessage = err.response?.data?.message || err.message;
+          } else if (err instanceof Error) {
             errorMessage = err.message;
           }
 
-          setState({
-            data: null,
-            loading: false,
-            error: errorMessage,
-          });
+          setState({ data: null, loading: false, error: errorMessage });
         }
       }
-    }
+    };
 
     fetchData();
 

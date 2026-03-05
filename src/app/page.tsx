@@ -1,7 +1,7 @@
 "use client";
 import { toast } from "react-toastify";
-import Button from "../utils/Button";
-import ContainerWraper from "../utils/containerWraper";
+import { Button } from "@/src/utils";
+import { ContainerWraper } from "@/src/utils";
 
 export default function page() {
   return (
