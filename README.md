@@ -1,8 +1,8 @@
 ## 1 Clone the Repository
 
 ```
-git clone https://github.com/your-username/your-repository-name.git
-cd your-repository-name
+git clone https://github.com/shahinsamiur/next_simple_template
+cd next_simple_template
 ```
 
 ## 2 Remove Existing Git History
