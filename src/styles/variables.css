@@ -23,8 +23,8 @@
 /* Dark Mode Overrides */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #000000;
     --muted: #9ca3af;
 
     --border: #262626;
