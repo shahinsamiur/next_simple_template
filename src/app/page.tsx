@@ -1,17 +1,37 @@
-"use client";
-import { toast } from "react-toastify";
-import { Button } from "@/src/utils";
-import { ContainerWraper } from "@/src/utils";
-
-export default function page() {
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import LogoTicker from "../components/LogoTicker";
+import Mission from "../components/Mission";
+import BentoFeatures from "../components/BentoFeatures";
+import FeatureTabs from "../components/FeatureTabs";
+import Pricing from "../components/Pricing";
+import Testimonials from "../components/Testimonials";
+import FAQ from "../components/FAQ";
+import Blog from "../components/Blog";
+import CTA from "../components/CTA";
+import Footer from "../components/Footer";
+import Proxcy from "../components/ProxyProductsTabs";
+export default function Home() {
   return (
-    <ContainerWraper>
-      <div className="min-h-screen">
-        <h1>hello samiur shahin</h1>
-        <Button onClick={() => toast.success("some one clicked me ")}>
-          click me
-        </Button>
+    <main className="min-h-screen  bg-[#f0efe3]">
+      <Header />
+      <Hero />
+
+      <div className="mx-auto container">
+        <LogoTicker />
+        <Proxcy />
+        <Mission />
+        <div id="product">
+          <BentoFeatures />
+          <FeatureTabs />
+        </div>
+        <Pricing />
+        <Testimonials />
+        <FAQ />
+        <Blog />
+        <CTA />
       </div>
-    </ContainerWraper>
+      <Footer />
+    </main>
   );
 }
