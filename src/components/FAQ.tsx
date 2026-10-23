@@ -16,7 +16,6 @@ export default function FAQ() {
       <h2 className="text-center font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
         Questions, answered
       </h2>
-
       <div className="mt-8 flex justify-center gap-2">
         {categories.map((cat) => (
           <button

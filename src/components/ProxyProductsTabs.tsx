@@ -81,7 +81,6 @@ const tabs = [
     flags: ["🇺🇸", "🇧🇷", "🇮🇳"],
   },
 ];
-// Reusable browser-mockup visual on the right of each panel
 function PanelMockup({ flags }: { flags: string[] }) {
   return (
     <div className="relative w-full h-full flex items-center justify-center">
@@ -129,7 +128,6 @@ export default function ProxyProductsTabs() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       ScrollTrigger.matchMedia({
-        // Scroll-driven pin + scrub only on desktop
         "(min-width: 1024px)": function () {
           setScrollDriven(true);
           const st = ScrollTrigger.create({
@@ -148,7 +146,6 @@ export default function ProxyProductsTabs() {
           });
           return () => st.kill();
         },
-        // Below lg: no scroll-jacking, normal tap-to-switch tabs
         "(max-width: 1023px)": function () {
           setScrollDriven(false);
         },
@@ -172,7 +169,6 @@ export default function ProxyProductsTabs() {
         className="lg:h-screen lg:flex lg:flex-col lg:justify-center px-5 md:px-10 py-16 lg:py-0"
       >
         <div className="max-w-6xl mx-auto w-full flex flex-col gap-8">
-          {/* Header */}
           <div className="flex flex-col items-center gap-3 text-center">
             <span className="text-xs font-mono uppercase tracking-wider text-[#0b4fff] font-semibold">
               Products
@@ -183,10 +179,7 @@ export default function ProxyProductsTabs() {
               your web scraping projects
             </h2>
           </div>
-
-          {/* Card */}
           <div className="border border-[#d8dade] bg-[#fefdf5] rounded-2xl overflow-hidden">
-            {/* Tab bar */}
             <div className="flex flex-wrap md:flex-nowrap items-stretch border-b border-[#d8dade] overflow-x-auto">
               {tabs.map((tab, i) => {
                 const TabIcon = tab.icon;
@@ -223,8 +216,6 @@ export default function ProxyProductsTabs() {
                 );
               })}
             </div>
-
-            {/* Panel */}
             <div className="grid lg:grid-cols-2 gap-8 p-6 md:p-10 items-center">
               <div
                 key={activeIndex}
@@ -260,8 +251,6 @@ export default function ProxyProductsTabs() {
                 <PanelMockup flags={active.flags} />
               </div>
             </div>
-
-            {/* Progress dots (mobile/tablet only, since there's no scroll cue there) */}
             {!scrollDriven && (
               <div className="flex justify-center gap-2 pb-6">
                 {tabs.map((_, i) => (
@@ -284,7 +273,6 @@ export default function ProxyProductsTabs() {
   );
 }
 
-// Small animated underline shown beneath the active tab
 function motionUnderline() {
   return (
     <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#0b4fff] rounded-full" />

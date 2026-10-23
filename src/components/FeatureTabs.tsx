@@ -3,12 +3,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { featureTabs } from "../lib/data";
-
 export default function FeatureTabs() {
   const [activeId, setActiveId] = useState(featureTabs[0].id);
   const active =
     featureTabs.find((tab) => tab.id === activeId) ?? featureTabs[0];
-
   return (
     <section className="border-y border-paper bg-white/50">
       <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
@@ -29,7 +27,6 @@ export default function FeatureTabs() {
             </button>
           ))}
         </div>
-
         <AnimatePresence mode="wait">
           <motion.div
             key={active.id}

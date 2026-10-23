@@ -18,36 +18,28 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
-
   section {
     @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
-
   p {
     @apply text-base leading-relaxed;
   }
-
   h1 {
     @apply font-bold tracking-tight text-lg md:text-lg lg:text-xl;
   }
-
   h2 {
     @apply font-semibold tracking-tight text-sm md:text-lg lg:text-lg;
   }
-
   a {
     @apply text-foreground hover:opacity-70 transition duration-300 text-base;
   }
 }
-
 li {
   @apply cursor-pointer flex justify-center items-center;
 }
-
 :root {
   --torn-size: 14px;
 }
-
 * {
   scroll-behavior: smooth;
 }

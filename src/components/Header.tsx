@@ -1,11 +1,8 @@
-// src/components/Header.tsx
 "use client";
-
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useState } from "react";
-
 const navLinks = [
   { name: "About", href: "/about-us" },
   { name: "Platform", href: "https://console.auxia.app/" },
@@ -25,7 +22,6 @@ export default function Header() {
             </div>
             <span className="text-xl font-bold tracking-tight">SardarIT</span>
           </Link>
-
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
@@ -37,7 +33,6 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-
           <div className="hidden lg:flex items-center gap-4">
             <Link
               href="/demo"
@@ -46,7 +41,6 @@ export default function Header() {
               Get Started
             </Link>
           </div>
-
           <button
             className="lg:hidden p-2 text-[#232323]"
             onClick={() => setIsOpen(!isOpen)}
@@ -55,7 +49,6 @@ export default function Header() {
           </button>
         </div>
       </div>
-
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}

@@ -1,10 +1,9 @@
-// src/components/Hero.tsx
 "use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Image from "next/image";
 const LightningIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +59,7 @@ const PersonIcon = () => (
 );
 
 const SpinnerIcon = () => (
-  <img
+  <Image
     src="https://cdn.prod.website-files.com/6998a7a4efcd66d9f2857e79/6a5422f4c0f23b51aca8c01e_spinner.png"
     alt="spinner"
     className="w-3 h-3 animate-spin shrink-0"
@@ -78,12 +77,8 @@ const Badge = ({ label }: { label: string }) => (
   </div>
 );
 
-// ---- Desktop yoyo timeline config ----
-// Every animated piece shares this duration + repeat settings so they
-// stay perfectly in sync across loops. repeatType "mirror" = plays
-// forward then backward (yoyo), then pauses `PAUSE` seconds, then repeats.
-const CYCLE = 5.5; // seconds, forward-direction length
-const PAUSE = 0; // seconds pause held at each end before reversing/restarting
+const CYCLE = 5.5;
+const PAUSE = 0;
 
 const makeReveal = (revealAt: number, riseFrom = 16) => ({
   initial: { opacity: 0, y: riseFrom },
@@ -135,15 +130,13 @@ export default function Hero() {
       transition: { duration: 0.6, ease: "easeOut" },
     },
   };
-
-  // ---- Mobile carousel: one step visible at a time, auto-advances, loops forever ----
   const mobileSteps = [
     { label: "ask Agent", kind: "ask" as const },
     { label: "Agent workflow", kind: "workflow" as const },
     { label: "AI Decisioning", kind: "personas" as const },
     { label: "personalized variant", kind: "variant" as const },
   ];
-  const STEP_DURATION = 3200; // ms per step
+  const STEP_DURATION = 3200;
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
@@ -157,7 +150,6 @@ export default function Hero() {
     <section className="relative pt-18 bg-[#f0efe3] text-[#232323] overflow-hidden w-full!">
       <div className="w-full mx-auto px-5 md:px-10">
         <div className="relative pt-16 pb-14 lg:pt-40 lg:pb-14">
-          {/* ============== DESKTOP VISUAL — yoyo timeline ============== */}
           <div className="hidden lg:flex flex-col justify-between items-start w-full absolute top-20 pointer-events-none text-[clamp(8px,1vw,1rem)]">
             {/* Lines */}
             <div className="relative w-full flex justify-start items-start mt-[1em] mb-[-5.6em] z-0">
@@ -220,9 +212,7 @@ export default function Hero() {
               </div>
             </motion.div>
 
-            {/* Right Side Steps */}
             <div className="relative z-20 flex justify-start items-start gap-[4.5em] mt-[4.5em] self-end">
-              {/* Step 2: Agent Workflow */}
               <motion.div
                 className="flex flex-col justify-start items-start gap-6 w-[18.4em] pointer-events-auto"
                 initial={{ opacity: 0, y: 20 }}
@@ -260,7 +250,6 @@ export default function Hero() {
                 </div>
               </motion.div>
 
-              {/* Step 3: AI Decisioning */}
               <motion.div
                 className="flex flex-col justify-start items-start gap-6 w-[18.5em] pointer-events-auto"
                 initial={{ opacity: 0, y: 20 }}
@@ -297,7 +286,6 @@ export default function Hero() {
                 </div>
               </motion.div>
 
-              {/* Step 4: Personalized Variant */}
               <motion.div
                 className="flex flex-col justify-start items-start gap-6 w-[18em] pointer-events-auto"
                 initial={{ opacity: 0, y: 20 }}
@@ -307,7 +295,7 @@ export default function Hero() {
                 <Badge label="personalized variant" />
                 <div className="snap-center shrink-0 w-[85vw] max-w-[20rem] rounded-2xl overflow-hidden shadow-4xl!">
                   <div className="relative aspect-[2.9/3.7] overflow-hidden">
-                    <img
+                    <Image
                       src={variants[0].img}
                       alt="variant"
                       className="absolute inset-0 w-full h-full object-cover"
@@ -330,7 +318,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Hero copy */}
           <motion.div
             className="flex flex-col gap-6 md:gap-10 max-w-5xl lg:pt-[clamp(20rem,30vw,10rem)] "
             variants={containerVariants}
@@ -371,7 +358,6 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* ============== MOBILE / TABLET — auto-advancing single-step carousel ============== */}
           <div className="flex lg:hidden flex-col gap-5 w-full mt-12">
             {/* progress dots */}
             <div className="flex items-center gap-2">
@@ -462,7 +448,7 @@ export default function Hero() {
                   {mobileSteps[activeStep].kind === "variant" && (
                     <div className="w-full rounded-2xl overflow-hidden shadow-lg">
                       <div className="relative aspect-[2.9/3.7] overflow-hidden">
-                        <img
+                        <Image
                           src={variants[0].img}
                           alt="variant"
                           className="absolute inset-0 w-full h-full object-cover"

@@ -1,8 +1,5 @@
-// src/components/LogoTicker.tsx
 "use client";
-
 import { motion } from "framer-motion";
-
 const brands = [
   "Assurant",
   "Atlassian",
