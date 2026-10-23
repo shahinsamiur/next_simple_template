@@ -49,13 +49,11 @@ export default function LogoTicker() {
           Leading brands grow with Auxia
         </p>
       </div>
-
       <div className="relative flex flex-col gap-6 sm:gap-8 lg:gap-10">
         <Row direction="left" />
         <Row direction="right" />
         <Row direction="left" className="hidden md:flex" />
       </div>
-
       <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 lg:w-32 bg-linear-to-r from-[#f0efe3] to-transparent z-10" />
       <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 lg:w-32 bg-linear-to-l from-[#f0efe3] to-transparent z-10" />
     </section>

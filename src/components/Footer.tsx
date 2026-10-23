@@ -22,7 +22,7 @@ export default function Footer() {
             <p className="font-display text-lg font-bold text-ink">
               Xit<span className="text-ledger">.</span>
             </p>
-            <p className="mt-3 max-w-[220px] text-sm text-ink/50">
+            <p className="mt-3 max-w-55 text-sm text-ink/50">
               Bookkeeping that reconciles itself.
             </p>
           </div>

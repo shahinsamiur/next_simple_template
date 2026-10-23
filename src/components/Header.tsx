@@ -15,7 +15,6 @@ const navLinks = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#f0efe3]/80 backdrop-blur-md border-b border-[#e2e1d3]">
       <div className="container mx-auto px-6 lg:px-8">

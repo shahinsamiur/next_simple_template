@@ -26,7 +26,7 @@ export default function Testimonials() {
         {testimonials.map((t) => (
           <div
             key={t.id}
-            className="w-[300px] shrink-0 select-none rounded-lg border border-ivory/15 bg-ivory/5 p-6 md:w-[360px]"
+            className="w-75 shrink-0 select-none rounded-lg border border-ivory/15 bg-ivory/5 p-6 md:w-90"
           >
             <p className="text-lg leading-relaxed text-ivory/90">
               &ldquo;{t.quote}&rdquo;

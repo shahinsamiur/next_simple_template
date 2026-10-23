@@ -36,7 +36,6 @@ export default function Mission() {
           land.
         </p>
       </div>
-
       <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {highlights.map((item) => (
           <TornCard key={item.label} className="px-5 pb-6">

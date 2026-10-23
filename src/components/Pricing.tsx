@@ -10,7 +10,6 @@ export default function Pricing() {
           Pricing that scales with your ledger, not your headcount.
         </h2>
       </div>
-
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         {pricingTiers.map((tier) => (
           <TornCard
@@ -58,7 +57,6 @@ export default function Pricing() {
           </TornCard>
         ))}
       </div>
-
       <div className="mt-6 flex flex-col items-center justify-between gap-4 rounded-lg border border-paper bg-white/60 px-8 py-6 sm:flex-row">
         <div>
           <h3 className="font-display text-lg font-semibold text-ink">

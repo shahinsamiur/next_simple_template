@@ -234,7 +234,7 @@ export default function Hero() {
                   {workflowSteps.map((step, i) => (
                     <motion.div
                       key={i}
-                      className="flex items-center gap-1 border-2 border-[#d8dade] rounded-[100rem] px-[0.25rem] py-[0.125rem] pr-[0.5rem] text-[0.8125rem] justify-between"
+                      className="flex items-center gap-1 border-2 border-[#d8dade] rounded-[100rem] px-1 py-0.5 pr-2 text-[0.8125rem] justify-between"
                       initial={{
                         opacity: 0,
                         y: "1em",
@@ -268,7 +268,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 2.0 }}
               >
                 <Badge label="AI Decisioning" />
-                <div className="flex flex-col gap-4 max-w-[14rem]">
+                <div className="flex flex-col gap-4 max-w-56">
                   {personas.map((persona, i) => (
                     <motion.div
                       key={i}

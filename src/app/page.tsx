@@ -16,7 +16,6 @@ export default function Home() {
     <main className="min-h-screen  bg-[#f0efe3]">
       <Header />
       <Hero />
-
       <div className="mx-auto container">
         <LogoTicker />
         <Proxcy />

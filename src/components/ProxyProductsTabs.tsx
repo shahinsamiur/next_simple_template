@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -88,7 +88,7 @@ function PanelMockup({ flags }: { flags: string[] }) {
       <div className="absolute top-4 right-6 w-14 h-14 rounded-2xl bg-white/90 shadow-lg flex items-center justify-center rotate-6">
         <FiHome className="w-6 h-6 text-[#0b4fff]" />
       </div>
-      <div className="w-full max-w-md rounded-2xl border border-white/40 bg-gradient-to-br from-[#e8eeff] to-[#c7d6ff] shadow-2xl overflow-hidden">
+      <div className="w-full max-w-md rounded-2xl border border-white/40 bg-linear-to-br from-[#e8eeff] to-[#c7d6ff] shadow-2xl overflow-hidden">
         <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/40">
           <span className="w-2.5 h-2.5 rounded-full bg-[#ff5f57]" />
           <span className="w-2.5 h-2.5 rounded-full bg-[#febc2e]" />
@@ -195,7 +195,7 @@ export default function ProxyProductsTabs() {
                   <button
                     key={tab.name}
                     onClick={() => !scrollDriven && setActiveIndex(i)}
-                    className={`flex-1 min-w-[140px] flex flex-col items-center gap-2 px-4 py-5 transition-colors relative ${
+                    className={`flex-1 min-w-35 flex flex-col items-center gap-2 px-4 py-5 transition-colors relative ${
                       scrollDriven ? "cursor-default" : "cursor-pointer"
                     }`}
                   >
@@ -256,7 +256,7 @@ export default function ProxyProductsTabs() {
                 </button>
               </div>
 
-              <div className="h-64 md:h-80 rounded-xl bg-gradient-to-br from-[#7c93ff] to-[#3d5cff] overflow-hidden">
+              <div className="h-64 md:h-80 rounded-xl bg-linear-to-br from-[#7c93ff] to-[#3d5cff] overflow-hidden">
                 <PanelMockup flags={active.flags} />
               </div>
             </div>

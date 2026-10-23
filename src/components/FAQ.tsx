@@ -10,9 +10,7 @@ const categories: FaqCategory[] = ["General", "Billing", "Security"];
 export default function FAQ() {
   const [category, setCategory] = useState<FaqCategory>("General");
   const [openId, setOpenId] = useState<string | null>(null);
-
   const filtered = faqItems.filter((item) => item.category === category);
-
   return (
     <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">
       <h2 className="text-center font-display text-3xl font-bold tracking-tight text-ink md:text-4xl">
