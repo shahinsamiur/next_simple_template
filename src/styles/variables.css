@@ -1,3 +1,4 @@
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,20 +9,8 @@
   --success: #16a34a;
   --danger: #dc2626;
   --warning: #f59e0b;
-  --font-sans: "Geist Sans", sans-serif;
-  --font-mono: "Geist Mono", monospace;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #000000;
-    --muted: #9ca3af;
-    --border: #262626;
-    --card: #111111;
-    --primary: #3b82f6;
-    --success: #22c55e;
-    --danger: #ef4444;
-    --warning: #fbbf24;
-  }
+  --font-body-family: var(--font-manrope, sans-serif);
+  --font-heading-family: var(--font-space-grotesk, sans-serif);
+  --font-code-family: var(--font-plex-mono, monospace);
+--font-size-footer-watermark: clamp(5rem, 18vw, 13rem);
 }

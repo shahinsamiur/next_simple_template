@@ -1,0 +1,23 @@
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: deps
+
+    command: npm run dev -- --hostname 0.0.0.0
+
+    ports:
+      - "3000:3000"
+
+    environment:
+      NODE_ENV: development
+      NEXT_TELEMETRY_DISABLED: "1"
+
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+
+    restart: unless-stopped

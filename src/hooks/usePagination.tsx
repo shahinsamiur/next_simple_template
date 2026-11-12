@@ -18,7 +18,9 @@ export function usePagination<T>({
   }, [data, currentPage, itemsPerPage]);
 
   const nextPage = () =>
-    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+    setCurrentPage((prev) =>
+      totalPages === 0 ? 1 : Math.min(prev + 1, totalPages),
+    );
   const prevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
   const goToPage = (page: number) =>
     setCurrentPage(Math.max(1, Math.min(page, totalPages)));

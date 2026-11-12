@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios, { AxiosError } from "axios";
-import { FetchState } from "@/src/types";
+import { FetchState } from "@/types";
 
 export function useFetch<T>(url: string) {
   const [state, setState] = useState<FetchState<T>>({
