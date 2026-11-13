@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-This document explains how to set up, run, develop, test, and maintain the Next.js starter template.
+This document explains how to set up, run, develop, test, and maintain this application.
 
 It is intended for developers who want to work with the project locally or contribute new functionality.
 
